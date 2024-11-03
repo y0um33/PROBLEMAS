@@ -6,7 +6,7 @@ En diferentes plataformas elegir diferentes problemas de implementación y graba
 - Estructuras no lineales
 
 ## Algoritmo de ordenamiento
-Leet code - 1051. Height Checker
+Leet code: 1051. Height Checker
 
 Liga del video (YouTube): https://youtu.be/i7kxlJD8N6s
 
