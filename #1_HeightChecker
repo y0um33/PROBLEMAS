@@ -1,1 +1,36 @@
+#include <vector>
+using namespace std;
 
+template <class T>
+class Sorts {
+public:
+    void ordenaBurbuja(vector<T> &v) {
+        int size = v.size() - 1;
+        for (int i = size; i > 0; i--) {
+            for (int j = 0; j < i; j++) { 
+                if (v[j] > v[j + 1]) { 
+                    swap(v[j], v[j + 1]);
+                }
+            }
+        }
+    }
+};
+
+class Solution {
+public:
+    int heightChecker(vector<int>& heights) {
+        vector<int> expected = heights;
+
+        Sorts<int> sorts;
+        sorts.ordenaBurbuja(expected);
+
+        int count = 0;
+        for (int i = 0; i < heights.size(); i++) {
+            if (heights[i] != expected[i]) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+};
