@@ -1,1 +1,45 @@
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+class BrowserHistory {
+private:
+    stack<string> atras; //to save the URL when the current is changes
+    stack<string> delante; //to save the URL when the currrent goes to back
+    string current;
+public:
+    BrowserHistory(string homepage) { 
+        current = homepage; //The URL where user is currently in
+    }
+    
+    void visit(string url) { 
+        atras.push(current); //current added in back stack
+        current = url; //the current is changed to new url
+        while(!delante.empty()){
+            delante.pop();
+        }
+    }
+    
+    string back(int steps) {
+        while(steps > 0 && !atras.empty()){
+            delante.push(current);
+            current = atras.top();
+            atras.pop();
+            steps--;
+        }
+        return current;
+    }
+    
+    string forward(int steps) {
+        while(steps > 0 && !delante.empty()){
+            atras.push(current);
+            current = delante.top();
+            delante.pop();
+            steps--;
+        }
+        return current;
+    }
+};
 
