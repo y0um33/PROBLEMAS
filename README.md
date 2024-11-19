@@ -14,7 +14,7 @@ En este problema utilicé el algoritmo de ordenamiento de burbuja. El problema t
 ## Estructuras lineales
 Leet code: 1472. Design Browser History
 
-Liga del video (YouTube): 
+Liga del video (YouTube): https://youtu.be/raqsZiui7hY
 
 En este problema utilicé la estructura lineal Stack. El problema trata sobre un navegador en el que comienzas desde una página principal y puedes visitar otros enlaces. Dependiendo del número de pasos que quieras mover, puedes ir hacia atrás o hacia adelante en el historial. Para resolverlo, todas las visitas se agregan(push) en los stacks y, dependiendo de los pasos, se retrocede o avanza.
 ## Estructuras no lineales
