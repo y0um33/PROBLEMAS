@@ -18,3 +18,8 @@ Liga del video (YouTube): https://youtu.be/iTorLtZRUnQ
 
 En este problema utilicé la estructura lineal Stack. El problema trata sobre un navegador en el que comienzas desde una página principal y puedes visitar otros enlaces. Dependiendo del número de pasos que quieras mover, puedes ir hacia atrás o hacia adelante en el historial. Para resolverlo, todas las visitas se agregan(push) en los stacks y, dependiendo de los pasos, se retrocede o avanza.
 ## Estructuras no lineales
+Codeforces: Bmail Computer Network
+
+Ligal del video (YouTube): https://youtu.be/CuqcbfQpltc
+
+En este problema utilicé la estructura no lineal Grafo. El problema trata sobre una empresa llamada Bmail que busca conectar nuevos routers con los routers adquiridos anteriormente. El enunciado proporciona los valores p sub i, que representan el índice del router al que cada nuevo router se conectó. La empresa tiene en total n - routers, el objetivo del problema es imprimir la secuencia de routers que conforman la trayectoria desde el primer router hasta el n-ésimo router.
