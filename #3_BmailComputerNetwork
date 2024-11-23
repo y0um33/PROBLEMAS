@@ -1,0 +1,73 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<int> find_path(int n, vector<int>& router) {
+
+    vector<vector<int>> grafo(n + 1);
+
+    for (int i = 1; i < n; i++) {
+        grafo[router[i - 1]].push_back(i + 1); 
+    }
+
+    vector<int> parent(n + 1, -1);
+    vector<bool> visit(n + 1, false);
+
+    queue<int> qu; //BFS
+    visit[1] = true; //it starts with 1
+    qu.push(1);
+
+    while (!qu.empty()) {
+        int current = qu.front();
+        qu.pop();
+
+        if (current == n) {
+            vector<int> path;
+            while (current != -1) {
+                path.push_back(current);
+                current = parent[current];
+            }
+            reverse(path.begin(), path.end());
+            return path;
+        }
+
+        for (int neighbor : grafo[current]) {
+            if (!visit[neighbor]) {
+                visit[neighbor] = true;
+                parent[neighbor] = current;
+                qu.push(neighbor);
+            }
+        }
+    }
+
+    return {};
+}
+
+int main() {
+    int n;
+    cin >> n; 
+
+    if (n == 1) {
+        cout << "1\n";
+        return 0;
+    }
+
+    vector<int> router(n - 1);  
+
+    for (int i = 0; i < n - 1; i++) {
+        cin >> router[i];
+    }
+
+    vector<int> result = find_path(n, router);
+
+    if (!result.empty()) {
+        for (int router : result) {
+            cout << router << " ";
+        }
+    } else {
+        cout << "No path";
+    }
+    cout << endl;
+
+    return 0;
+}
